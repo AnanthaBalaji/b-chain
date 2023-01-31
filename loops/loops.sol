@@ -1,7 +1,5 @@
 pragma solidity >0.7.0;
 
-
-
 contract ConstructMatix{
 
     function construct2DIntMatrix(uint rows, uint cols, int256 value) public pure returns(int256[][] memory){
