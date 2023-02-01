@@ -1,0 +1,1 @@
+Banker who collects fee for deposit. The first deposit for the user is free and from the next deposit the user has to pay the fee of 1000 wei. If the user makes a incorrect deposit the amount will be added to the banker's fee. Withdrawal is free. Only the deployer(Banker) of the smart contract can withdraw the fees. 
