@@ -1,7 +1,7 @@
 pragma solidity >=0.4.22 <=0.8.17;
 
 contract Competitors {
-    // Write your code here
+   
 
     address maxDepositor = address(0);
     address depositor1 = address(0);

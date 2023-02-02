@@ -21,7 +21,7 @@ contract EtherElection {
     }
     
     function enroll() public payable {
-        // Write your code here
+       
         require(noOfCandidates !=3, "3 candiates have been selected");
         require(msg.value == 1 ether, "Candidate registeration amount is 1 ether");
         votes[msg.sender] = 0;
@@ -30,7 +30,7 @@ contract EtherElection {
     }
 
     function vote(address candidate) public payable {
-        // Write your code here
+       
         require(noOfCandidates == 3, "Enrollment phase not complete");
         require(isWinnerSelected == false,"Winner is already selected");
         require(userVoted[msg.sender] == false, "User already voted");
@@ -45,13 +45,13 @@ contract EtherElection {
     }
 
     function getWinner() public view returns (address) {
-        // Write your code here
+       
         require(isWinnerSelected, "Winner is not yet selected");
         return winner;
     }
 
     function claimReward() public {
-        // Write your code here
+       
         require(msg.sender == winner,"The sender is not the winner");
         require(isWinnerSelected,"Winner not yet selected");
         require(isRewardRecieved == false,"Reward already received by the winner");
@@ -61,7 +61,7 @@ contract EtherElection {
     }
 
     function collectFees() public {
-        // Write your code here
+       
         require(msg.sender == owner,"Only owner can withdraw the fee");
         require(isRewardRecieved,"Winner has not collected the reward");
         selfdestruct(payable(owner));

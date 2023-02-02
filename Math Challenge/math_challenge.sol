@@ -72,7 +72,7 @@ contract EtherMath {
     }
 
     function claimRewards() public {
-        // Write your code here
+       
         (bool sent,) = payable(msg.sender).call{value: winnerRewards[msg.sender]}("");
         require(sent);
     }

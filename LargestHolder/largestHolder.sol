@@ -20,7 +20,6 @@ uint256[] balances;
         uint256[] memory _balances,
         address[] memory _holders
     ) public {
-        // Write your code here
         require(!balanceSubmitted, "balances have already been submitted");
         holders = _holders;
         balances = _balances;
@@ -39,7 +38,6 @@ uint256[] balances;
     }
 
     function process() public {
-        // Write your code here
         require(balanceSubmitted,"Balance should be submitted");
         require(txnRequired > 0, "BAlaces have been processed");
 
@@ -60,13 +58,13 @@ uint256[] balances;
     }
 
     function numberOfTxRequired() public view returns (uint256) {
-        // Write your code here
+       
         require(balanceSubmitted, "Balance is not submited.");
         return txnRequired;
     }
 
     function getLargestHolder() public view returns (address) {
-        // Write your code here
+       
         require(txnRequired ==0, "Largest holder is not yet determined.");
         return largestHolder;
     }

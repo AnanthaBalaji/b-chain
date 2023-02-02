@@ -25,12 +25,10 @@ contract GreedyBanker {
     }
 
     fallback() external payable {
-        // Write your code here
         fee+= msg.value;
     }
 
     function withdraw(uint256 amount) external {
-        // Write your code here
         require(amount <= balances[msg.sender],"Insufficient balance");
         balances[msg.sender] -= amount;
         (bool sent,) = payable(msg.sender).call{value: amount}("");
@@ -38,7 +36,6 @@ contract GreedyBanker {
     }
 
     function collectFees() external {
-        // Write your code here
         require(msg.sender == owner, "Only owner can collect the fee");
         (bool sent,) = payable(owner).call{value: fee}("");
         fee = 0;
@@ -46,7 +43,6 @@ contract GreedyBanker {
     }
 
     function getBalance() public view returns (uint256) {
-        // Write your code here
         return balances[msg.sender];
     }
 }
